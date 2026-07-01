@@ -34,7 +34,7 @@ startBtn.onclick = () => {
 };
 
 /* ---------- تسجيل الدخول ---------- */
-const validAnswers = ["272005", "2/7/2005", "2-7-2005", "02/07/2005", "2 7 2005"];
+const validAnswers = ["mariam272005"];
 
 loginBtn.onclick = () => attemptLogin();
 password.addEventListener("keyup", (e) => { if (e.key === "Enter") attemptLogin(); });
