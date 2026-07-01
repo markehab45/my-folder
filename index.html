@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>❤️ مريومة حبيبتي ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<canvas id="skyCanvas"></canvas>
+<div id="hearts"></div>
+
+<!-- ============ شاشة التحميل ============ -->
+<div id="loadingScreen">
+    <div class="loadHeart">❤</div>
+    <h1 class="logo">مريـومة</h1>
+    <p class="loadingText">بجهّز حاجة تخص أجمل بنت في الدنيا...</p>
+    <div class="loadBar"><span></span></div>
+</div>
+
+<!-- ============ شاشة الترحيب ============ -->
+<section id="welcome">
+    <div class="glass fadeUp">
+        <span class="eyebrow">من ماركو، إلى مريم</span>
+        <h1>إلى أجمل بنت في الدنيا</h1>
+        <h2 class="signature">مريم</h2>
+        <p>
+            في يوم <span class="dateChip">2 / 7 / 2005</span>
+            جت للدنيا أحلى حاجة حصلت فيها... وأنا لسه مش مصدق إني بحبك للدرجادي.
+        </p>
+        <button id="startBtn" class="btnMain">ابدئي الرحلة <span>❤</span></button>
+    </div>
+</section>
+
+<!-- ============ شاشة الباسورد ============ -->
+<section id="passwordPage" class="hide">
+    <div class="glass fadeUp">
+        <div class="lockIcon">🔐</div>
+        <h1>الباب مقفول يا مريومة</h1>
+        <p>مش هيتفتح غير بمفتاح واحد بس... اليوم اللي الدنيا نورت فيه بيكي</p>
+        <input type="password" id="password" placeholder="اكتبي التاريخ.. يوم / شهر / سنة" inputmode="numeric">
+        <button id="loginBtn" class="btnMain">دخول</button>
+        <p id="error"></p>
+    </div>
+</section>
+
+<!-- ============ الصفحة الرئيسية ============ -->
+<section id="home" class="hide">
+
+    <!-- Hero -->
+    <div class="heroWrap">
+        <p class="tag">🎂 عيد ميلاد مريومة</p>
+        <h1 class="birthdayTitle">
+            كل سنة وانتي طيبة<br><span class="nameGlow">يا مريم</span>
+        </h1>
+        <p id="typing"></p>
+        <div class="scrollHint">مرري لتحت ↓</div>
+    </div>
+
+    <!-- خيط الذكريات -->
+    <section class="section timelineSection">
+        <h2 class="sectionTitle"><span>خيط</span> ذكرياتنا</h2>
+        <p class="sectionSub">كل نقطة في الخط ده يوم غيّر حياتي</p>
+
+        <div class="timeline">
+            <div class="tLine"></div>
+
+            <div class="tItem">
+                <div class="tDot">١</div>
+                <div class="tCard">
+                    <span class="tDate">13 / 2 / 2024</span>
+                    <h3>يوم ما بدأت الحكاية</h3>
+                    <p>يوم عادي في التقويم... لكنه أهم يوم في حياتي. من يومها الدنيا بقت شكل تاني، وقلبي بقى ساكن عندك.</p>
+                </div>
+            </div>
+
+            <div class="tItem">
+                <div class="tDot">٢</div>
+                <div class="tCard">
+                    <span class="tDate">5 / 5</span>
+                    <h3>أول خروجة</h3>
+                    <p>أول مرة نمشي جنب بعض في الشارع، أول ضحكة حقيقية سوا، وأول مرة حسيت إن الوقت بيجري وأنا مش عايزه يخلص.</p>
+                </div>
+            </div>
+
+            <div class="tItem">
+                <div class="tDot">٣</div>
+                <div class="tCard highlight">
+                    <span class="tDate">2 / 7 / 2005</span>
+                    <h3>يوم مولدك ❤️</h3>
+                    <p>ده اليوم اللي كل حاجة حلوة في حياتي بدأت بسببه. لولاه ما كنتش لاقيك، وما كنتش عرفت معنى إني أحب حد بجد.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الجاليري -->
+    <section class="section gallerySection">
+        <h2 class="sectionTitle"><span>لحظات</span> بينا</h2>
+        <p class="sectionSub">كل صورة فيهم ليها حكاية محفورة في قلبي</p>
+
+        <div class="galleryTrack" id="galleryTrack"></div>
+        <div class="galleryDots" id="galleryDots"></div>
+    </section>
+
+    <!-- عداد الحب -->
+    <section class="section counterSection">
+        <h2 class="sectionTitle"><span>عداد</span> حبنا</h2>
+        <p class="sectionSub">من 13 فبراير 2024 وأنا بعد كل ثانية بحبك أكتر</p>
+        <div id="counter" class="counterGrid"></div>
+    </section>
+
+    <!-- الرسالة -->
+    <section class="section letterSection">
+        <h2 class="sectionTitle"><span>رسالة</span> من ماركو</h2>
+        <p class="sectionSub">مقفولة بختم، وما بتتفتحش غير بضغطة منك</p>
+
+        <div class="envelopeWrap">
+            <div id="envelope" class="envelope">
+                <div class="envFlap"></div>
+                <div class="envBody">
+                    <div class="wax">M</div>
+                    <p>اضغطي على الختم لتفتحي الرسالة</p>
+                </div>
+            </div>
+
+            <div id="letterPaper" class="letterPaper hide">
+                <div id="letterText" class="letterContent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- التورتة -->
+    <section class="section cakeSection">
+        <h2 class="sectionTitle"><span>لحظة</span> التمنّي</h2>
+        <p class="sectionSub">اقفلي عنيكي، اتمني أمنية، وطفّي الشمعتين</p>
+
+        <div class="cakeStage">
+            <div class="cake">
+                <div class="candle c1"><span class="flame"></span></div>
+                <div class="candle c2"><span class="flame"></span></div>
+                <div class="cakeTopLayer"></div>
+                <div class="cakeMidLayer"></div>
+                <div class="cakeBaseLayer"></div>
+                <div class="cakePlate"></div>
+            </div>
+        </div>
+        <button id="cakeBtn" class="btnMain">🎂 اطفي الشموع</button>
+    </section>
+
+    <!-- الختام -->
+    <div id="final" class="final">
+        <div class="finalGlow"></div>
+        <h1>بحبك وبموت فيكي ❤️</h1>
+        <h2>كل سنة وانتي أجمل بنت في الدنيا يا مريومة</h2>
+        <h3>Forever & Always</h3>
+        <h4>— ماركو</h4>
+    </div>
+
+</section>
+
+<audio id="music" loop>
+    <source src="music/song.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
